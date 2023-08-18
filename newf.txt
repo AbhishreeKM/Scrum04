@@ -1,6 +1,4 @@
 this is a3
-<<<<<<< HEAD
+
 this is a3s
-=======
-this is s
->>>>>>> 0ecbdfd39f273057385c4461835ca636cde95c4e
+
