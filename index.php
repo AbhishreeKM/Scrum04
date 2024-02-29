@@ -21,7 +21,7 @@ error_reporting(0);
         <div class="inner-header">
             <div class="logo">
                 <p>
-                    Welcome to KarnatakaBank ATM
+                    Welcome to Karnataka Bank
                 </p>
             </div>
         </div>
