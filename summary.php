@@ -1,5 +1,5 @@
 <?php 
-$con= mysqli_connect("DESKTOP-QNBIA7M", "root", "", "atm")
+$con= mysqli_connect("localhost", "root", "", "atm")
          or die(mysqli_errno($con));
 session_start();
 $select_query="CALL transaction_display()";

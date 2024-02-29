@@ -25,8 +25,8 @@
             <div class="row">
                 <div class="col-xs-4 col-lg-offset-4"><center>
                         <form method="post" action="fund.php">
-                            <br><Br><br><br><br><br><input type="text" placeholder="Enter the account number"  class="form-control input-lg" name="account"><br><br>
-                            <input type="text" placeholder="Enter the amount"  class="form-control input-lg" name="amount"><br><br>
+                            <br><Br><br><br><br><br><input type="text" placeholder="Enter the account number"  class="form-control input-lg" name="account" id="acc_no"><br><br>
+                            <input type="text" placeholder="Enter the amount"  class="form-control input-lg" name="amount" id="amount"><br><br>
                  <input type="submit"  class="button" value="Submit">&emsp;
                       
                  <a  href="index.php" class="button">Exit</a> <br><br><br> &emsp;

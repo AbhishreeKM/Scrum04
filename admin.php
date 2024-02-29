@@ -25,9 +25,9 @@
             <div class="row">
                 <div class="col-xs-4 col-lg-offset-4"><center>
                         <form method="post" action="admin1.php">
-                            <br><Br><br><br><br><br><input type="text" placeholder="Enter the admin id"  class="form-control input-lg" name="admin_id"><br><br>
-                            <input type="text" placeholder="Enter the admin pin"  class="form-control input-lg" name="admin_pin"><br><br>
-                            <input type="text" placeholder="Enter the atm_id"  class="form-control input-lg" name="atm_id"><br><br>
+                            <br><Br><br><br><br><br><input type="text" placeholder="Enter the admin id"  class="form-control input-lg" name="admin_id" id="admin_id"><br><br>
+                            <input type="text" placeholder="Enter the admin pin"  class="form-control input-lg" name="admin_pin" id="admin_pin"><br><br>
+                            <input type="text" placeholder="Enter the atm_id"  class="form-control input-lg" name="atm_id" id="atm_id"><br><br>
                  <input type="submit"  class="button" value="Submit">&emsp;
                       
                  <a  href="index.php" class="button">Exit</a> <br><br><br> &emsp;

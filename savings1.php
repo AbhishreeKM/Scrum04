@@ -1,23 +1,25 @@
-<?php
-$con= mysqli_connect("DESKTOP-QNBIA7M", "root", "", "atm")
+<?php 
+$con= mysqli_connect("localhost", "root", "", "atm")
          or die(mysqli_errno($con));
 session_start();
-$newpin= $_POST['newpin'];
 $pin=$_SESSION['Pin'];
-$select_query="update card set card_pin=$newpin where card_pin=$pin";
+$cash=$_POST['cash'];
+$_SESSION['cash']=$cash;
+$select_query="update account set balance=balance-$cash where user_id in"
+        . " (select user_id from card where card_pin=$pin)";
 $select_query_result= mysqli_query($con, $select_query) or die(mysqli_error($con));
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?php "Pin Change"; ?> </title>
+        <title><?php "Savings Account"; ?> </title>
         <link  rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
         <link href="style.css" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
     </head>
-    <body style="background-image:url(img1/atm2.jpg)">
+    <body style="background-image:url(img1/atm4.jpg)">
     <link href="style.css" rel="stylesheet" type="text/css"/>
     <div class="header">
         <div class="inner-header">
@@ -28,26 +30,23 @@ $select_query_result= mysqli_query($con, $select_query) or die(mysqli_error($con
             </div>
         </div>
     </div>
-    <div class="header">
-            <div class="banner-image">
-                <div class="inner-banner-image">
-                <b>
-                    <h4>Pin is Successfully Changed</h4>
-                </b>
-           
-              
-                </div>
-            </div>   
-        </div>
-    <div class="container">
+     <div class="container">
         <div class="padding">
-        
-            <center>  <a href="index.php" class="button">Exit</a></center> <br><br><br> &emsp; 
-                   
+    <table>
+            <tbody>
+            <th><h1>
+                    <br><br><br>Transaction Successful. Please collect Your Money<br><br><br><br>
+                </h1>
+            </th>
+                <tr>
+                    <td>
+                        <a href="balance.php" class="button">View my Balance</a> <br><br><br> &emsp; 
+                    </td>
+                    <td>
+                        <a href="index.php" class="button">Exit</a><br><br><br> &emsp;
+                    </td>
+                </tr>
         </div>
-    </div>
-        
+     </div>
     </body>
-</html>
-
-
+    </html>

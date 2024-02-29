@@ -1,19 +1,20 @@
 <?php 
-$con= mysqli_connect("DESKTOP-QNBIA7M", "root", "", "atm")
+$con= mysqli_connect("localhost", "root", "", "atm")
          or die(mysqli_errno($con));
 session_start();
 $pin=$_SESSION['Pin'];
-$cash1=$_POST['cash1'];
-$select_query="update account set balance=balance-$cash1 where user_id in"
-        . " (select user_id from card where card_pin=$pin)";
+    $select_query="select balance from card where card_pin=$pin";
+$select_query_result= mysqli_query($con, $select_query) or die(mysqli_error($con));
+$row= mysqli_fetch_array($select_query_result);
+$select_query="update account set balance=balance-250 where user_id in"
+        . "(select user_id from card where card_pin=$pin)";
 $select_query_result= mysqli_query($con, $select_query) or die(mysqli_error($con));
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?php "Current Account"; ?> </title>
+        <title><?php "Account Type"; ?> </title>
         <link  rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
         <link href="style.css" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

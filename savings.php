@@ -1,5 +1,5 @@
 <?php 
-$con= mysqli_connect("DESKTOP-QNBIA7M", "root", "", "atm")
+$con= mysqli_connect("localhost", "root", "", "atm")
          or die(mysqli_errno($con));
 session_start();
 $pin=$_SESSION['Pin'];
@@ -50,7 +50,7 @@ $row= mysqli_fetch_array($select_query_result);
             <div class="row">
                 <div class="col-xs-10"><center>
                         <form method="post" action="savings1.php">
-                            <br><br><br><input type="text" placeholder="Enter the amount to Withdraw"  class="form-control input-lg" name="cash"><br><br>
+                            <br><br><br><input type="text" placeholder="Enter the amount to Withdraw"  class="form-control input-lg" name="cash" id="amount"><br><br>
                  
                     
                  <input type="submit" class="button" value="Submit">&emsp;

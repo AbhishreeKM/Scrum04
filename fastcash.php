@@ -1,53 +1,66 @@
 <?php 
-$con= mysqli_connect("DESKTOP-QNBIA7M", "root", "", "atm")
+$con= mysqli_connect("localhost", "root", "", "atm")
          or die(mysqli_errno($con));
 session_start();
 $pin=$_SESSION['Pin'];
-    $select_query="select balance from card where card_pin=$pin";
+$select_query="select balance from card where card_pin=$pin";
 $select_query_result= mysqli_query($con, $select_query) or die(mysqli_error($con));
 $row= mysqli_fetch_array($select_query_result);
-$select_query="update account set balance=balance-250 where user_id in"
-        . "(select user_id from card where card_pin=$pin)";
-$select_query_result= mysqli_query($con, $select_query) or die(mysqli_error($con));
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?php "Account Type"; ?> </title>
+        <title><?php "Transaction page"; ?> </title>
         <link  rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
         <link href="style.css" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
-    </head>
     <body style="background-image:url(img1/atm4.jpg)">
     <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
     <div class="header">
         <div class="inner-header">
             <div class="logo">
                 <p><center>
-                    Karnataka Bank ATM</center><br><br><br> <br><br><br>
+                    Karnataka Bank ATM</center> 
                 </p>
             </div>
         </div>
     </div>
-     <div class="container">
+ <div class="container">
+            <div class="row">
+                <br><Br><BR> <h7><br> <b><div class="col-xs-2">Remaining Balance: </div>
+                        <div class="col-xs-10"><?php echo $row['balance']; ?> </div><br><br></b></h7> &emsp;&emsp;</h7>
+            </div>
+    <div class="container">
         <div class="padding">
-    <table>
+        <table>
             <tbody>
-            <th><h1>
-                    <br><br><br>Transaction Successful. Please collect Your Money<br><br><br><br>
-                </h1>
+            <th><h1><center>
+                        Please select a Denomination<br><br>
+                </center></h1>
             </th>
                 <tr>
                     <td>
-                        <a href="balance.php" class="button">View my Balance</a> <br><br><br> &emsp; 
+                        <a href="100.php" class="button">100</a> <br><br><br> &emsp; 
                     </td>
                     <td>
-                        <a href="index.php" class="button">Exit</a><br><br><br> &emsp;
+                        <a href="200.php" class="button">200</a><br><br><br> &emsp;
                     </td>
                 </tr>
-        </div>
-     </div>
-    </body>
+                <tr>
+                    <td>
+                        <a href="500.php" class="button">500</a><br><br><br>
+                    </td>
+                    <td>
+                        <a href="2000.php" class="button">2000</a><br><br><br>
+                </td>
+                </tr>
+          
+            </tbody>
+        </table>
+    </div>
+    </div>
+</body>
     </html>

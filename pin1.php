@@ -1,5 +1,5 @@
 <?php 
- $con= mysqli_connect("DESKTOP-QNBIA7M", "root", "", "atm")
+ $con= mysqli_connect("localhost", "root", "", "atm")
          or die(mysqli_errno($con));
  session_start();
 $pin= $_POST['Pin'];
@@ -63,26 +63,18 @@ else{
             </th>
                 <tr>
                     <td>
-                        <a href="balance.php" class="button">Balance Enquiry</a> <br><br><br> &emsp; 
+                        <a href="balance.php" class="button" id="balance_enquiry">Balance Enquiry</a> <br><br><br> &emsp; 
                     </td>
                     <td>
-                        <a href="cash.php" class="button">Cash Withdrawal</a><br><br><br> &emsp;
+                        <a href="cash.php" class="button" id="cash_withdrawal" >Cash Withdrawal</a><br><br><br> &emsp;
                     </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="pinchange.php" class="button">Pin Change</a><br><br><br>&emsp;
-                    </td>
-                    <td>
-                        <a href="fastcash.php" class="button">Fast Cash</a><br><br><br>&emsp;
-                </td>
-                </tr>
+                </tr> 
                  <tr>
-                    <td>
-                        <a href="mini.php" class="button">Mini-Statement</a><br><br><br>&emsp;
+                 <td>
+                        <a href="pinchange.php" class="button" id="pinchange">Pin Change</a><br><br><br>&emsp;
                     </td>
                     <td>
-                        <a href="fundtransfer.php" class="button">Funds Transfer</a><br><br><br>&emsp;
+                        <a href="fundtransfer.php" class="button" id="fund_transfer">Funds Transfer</a><br><br><br>&emsp;
                 </td>
                 </tr>
           

@@ -6,46 +6,37 @@
         <link href="style.css" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
-        <title>Pin</title>
+        <title>Pin Change</title>
     <body style="background-image:url(img1/atm2.jpg)">
     <link href="style.css" rel="stylesheet" type="text/css"/>
-        <div class="container">
+        <div class="header">
             <div class="banner-image">
                 <div class="inner-banner-image">
                 <b>
-                    <h4>Enter Your Pin</h4>
+                    <h4>Please Enter Your new Pin here</h4>
                 </b>
            
               
                 </div>
-            </div>
+            </div>   
         </div>
-        
     <center>
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-4">
-                        <form method="post" action="pin1.php">
-                            <div class="form_group">
-                                <input type="text" placeholder="Enter your pin here"  class="form-control input-lg" style="overflow:hidden" name="Pin"><br><br>
-                            </div>
+                <div class="col-lg-4 col-lg-offset-4"><center>
+                        <form method="post" action="newpin.php">
+                            <input type="password" placeholder="Enter your new pin"  class="form-control input-lg" name="newpin" id="enter_pin"><br><br>
+                 
                     
                  <input type="submit"  class="button" value="Submit">&emsp;
-                        <input type="submit"  class="button" formaction="pin.php" value="Clear">
+                 <input type="submit"  class="button" formaction="pinchange.php" value="Clear">
                             </form>
-            <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-4">
-                    <br><Br>    <a href="admin.php" class="button">Admin</a> <br> &emsp;</center>
-    </div>
+                          
+                    </center>
             </div>
-            </div>
-                                     
-                 
-            </form>
-    
-   
-   
+                    
+                </div>
+    </center>
 </body>
                   
     
